@@ -25,6 +25,13 @@ body {
     background-color: var(--contrast);
     box-sizing: border-box;
   }
+
+#portfolio {
+    height: 100vh;
+    background-color: var(--bgColor);
+    border: 12px solid var(--contrast);
+    box-sizing: border-box;
+}
   
 .flex {
     display: flex;

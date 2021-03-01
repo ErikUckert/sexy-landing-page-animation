@@ -86,13 +86,6 @@ hr {
     letter-spacing: 2px;
 }
 
-.logo-small{
-    font-size: 2rem;
-    text-transform: uppercase;
-    font-weight: 600;
-    letter-spacing: 2px;
-}
-
 .grow { transition: all .2s ease-in-out; }
 .grow:hover { transform: scale(1.5); }
   
@@ -305,4 +298,10 @@ a {
     .highlight {
         line-height: 2rem;
     }
+    .logo{
+      font-size: 2.5rem;
+      text-transform: uppercase;
+      font-weight: 600;
+      letter-spacing: 2px;
+  }
 }

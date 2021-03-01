@@ -57,9 +57,16 @@ const revealCurtain = (parent) => {
 
 function OnAnimationEnd() {
     const arrow = document.getElementById("arrow");
-    console.log("Event done");
     arrow.classList.remove("animate-slideup");
     arrow.classList.add("blink");
+}
+
+function OnAnimationEnd2() {
+    console.log("yeah")
+    var myElement = document.getElementById('portfolio');
+    var topPos = myElement.offsetTop;
+    console.log(topPos);
+    window.scrollTo(0, topPos);
 }
 
 const init = () => {
@@ -84,5 +91,8 @@ mouseTarget[0].addEventListener('mouseenter', e => {
     mouseTarget[1].classList.remove("hide");
     mouseTarget[0].classList.remove("blink");
   });
+
+const animatedDivs2 = document.getElementById('test');
+animatedDivs2.addEventListener("webkitAnimationEnd", OnAnimationEnd2);
 
 

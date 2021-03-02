@@ -56,7 +56,7 @@ const revealCurtain = (parent) => {
 };
 
 const init = () => {
-    const container = document.getElementById("main");
+    const container = document.getElementById("landing");
     const curtain = revealCurtain(container);
     setTimeout(() => {
         container.removeChild(curtain);

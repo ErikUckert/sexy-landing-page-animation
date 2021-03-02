@@ -9,11 +9,9 @@ body {
 :root {
     --contrast: #4f646f;
     --bgColor: #a2e8dd;
-    --fontColor: #4f646f;
-    --fontColorContent: #a2e8dd;
   }
   
-#main {
+#landing {
     height: 100vh;
     background-color: var(--bgColor);
     border: 12px solid var(--contrast);
@@ -49,7 +47,7 @@ body {
     padding: 0px 20px;
     font-weight: bold;
     font-family: "Poppins", sans-serif;
-    color: var(--fontColorContent);
+    color: var(--bgColor);
   }
 
 .content-page span {
@@ -62,7 +60,7 @@ body {
     font-size: 60px;
     font-weight: bold;
     font-family: "Poppins", sans-serif;
-    color: var(--fontColor);
+    color: var(--contrast);
   }
 
 hr {
@@ -306,9 +304,6 @@ hr {
 @media (max-width: 520px) {
     .box {
         font-size: 40px;
-    }
-    .main {
-        border: 5px solid #fc3c3c;
     }
     .animate-slideup {
         margin-right: 6px;

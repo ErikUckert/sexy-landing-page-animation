@@ -86,6 +86,12 @@ function scrollToContent() {
 // scroll to portfolio section
 function scrollToPortfolio() {
     const divPortfolio = document.getElementById('portfolio');
+    if (divPortfolio.style.display === "none") {
+        divPortfolio.style.display = "block";
+    } else {
+        divPortfolio.style.display = "none";
+    }
+    
     const yTopPortfolio = divPortfolio.getBoundingClientRect().top;
     window.scrollBy(0, yTopPortfolio);
 }
@@ -98,10 +104,6 @@ clickTarget.onclick = function() {scrollToContent()};
 mouseTarget = document.getElementsByClassName("lookAt");
 mouseTarget[0].addEventListener('mouseenter', e => {
     mouseTarget[1].classList.add("animate-slideup");
-    mouseTarget[2].classList.add("animate-slideup");
     mouseTarget[1].classList.remove("hide");
-    mouseTarget[2].classList.remove("hide");
     mouseTarget[0].classList.remove("blink");
   });
-
-

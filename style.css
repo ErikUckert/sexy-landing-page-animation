@@ -41,6 +41,7 @@ body {
 
 .hide {
     opacity: 0;
+    visibility: hidden;
 }
   
 .content-page {
@@ -115,6 +116,28 @@ hr {
 
     font-size: 40px;
     color: #4f646f;
+}
+
+.button {
+  border: 5px solid var(--bgColor);
+  background: transparent;
+  color: var(--bgColor);
+  padding: 8px 16px;
+  font-weight: bold;
+  font-size: 3rem;
+  cursor: pointer;
+  outline: transparent;
+  transition: background 0.25s ease, color 0.25s ease, box-shadow 0.15s ease;
+  box-shadow: 8px 8px 0 #535657;
+  margin-top: 5vh;
+  opacity: 0.8;
+}
+.button:hover {
+  box-shadow: 4px 4px 0 #ff8552;
+  opacity: 1;
+}
+.button:active {
+  box-shadow: 0 0 0 #888;
 }
 
 .grow { transition: all .2s ease-in-out; }
@@ -301,5 +324,10 @@ hr {
       text-transform: uppercase;
       font-weight: 600;
       letter-spacing: 2px;
-  }
+    }
+    .button {
+      font-weight: bold;
+      font-size: 2rem;
+
+    }
 }

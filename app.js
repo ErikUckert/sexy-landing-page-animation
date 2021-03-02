@@ -86,11 +86,13 @@ function scrollToEntry() {
 // scroll to portfolio section
 function scrollToPortfolio() {
     const divPortfolio = document.getElementById('portfolio');
+    const divFooter = document.getElementById("footer");
     if (divPortfolio.style.display === "none") {
         divPortfolio.style.display = "block";
     } else {
         divPortfolio.style.display = "none";
     }
+    divFooter.classList.remove("hide")
     
     const yTopPortfolio = divPortfolio.getBoundingClientRect().top;
     window.scrollBy(0, yTopPortfolio);

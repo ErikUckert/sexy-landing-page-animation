@@ -55,20 +55,6 @@ const revealCurtain = (parent) => {
     return curtain;
 };
 
-function OnAnimationEnd() {
-    const arrow = document.getElementById("arrow");
-    arrow.classList.remove("animate-slideup");
-    arrow.classList.add("blink");
-}
-
-function OnAnimationEnd2() {
-    console.log("yeah")
-    var myElement = document.getElementById('portfolio');
-    var topPos = myElement.offsetTop;
-    console.log(topPos);
-    window.scrollTo(0, topPos);
-}
-
 const init = () => {
     const container = document.getElementById("main");
     const curtain = revealCurtain(container);
@@ -80,9 +66,26 @@ const init = () => {
 
 init();
 
+function OnAnimationEndForArrow() {
+    const arrow = document.getElementById("arrow");
+    arrow.classList.remove("animate-slideup");
+    arrow.classList.add("blink");
+}
+
 // sort animations for blinking arrow on landing page
-const animatedDivs = document.getElementsByClassName("flex");
-animatedDivs[0].addEventListener("webkitAnimationEnd", OnAnimationEnd);
+const animatedArrow = document.getElementsByClassName("flex");
+animatedArrow[0].addEventListener("webkitAnimationEnd", OnAnimationEndForArrow);
+
+// scroll to content section
+function scrollToContent() {
+    const divContent = document.getElementById('content');
+    const yTopContent = divContent.getBoundingClientRect().top;
+    window.scrollBy(0, yTopContent);
+}
+
+// set scroll on click for arrow
+const clickTarget = document.getElementById('arrow');
+clickTarget.onclick = function() {scrollToContent()};
 
 // animate text on mouse hover
 mouseTarget = document.getElementsByClassName("lookAt");
@@ -91,8 +94,5 @@ mouseTarget[0].addEventListener('mouseenter', e => {
     mouseTarget[1].classList.remove("hide");
     mouseTarget[0].classList.remove("blink");
   });
-
-const animatedDivs2 = document.getElementById('test');
-animatedDivs2.addEventListener("webkitAnimationEnd", OnAnimationEnd2);
 
 

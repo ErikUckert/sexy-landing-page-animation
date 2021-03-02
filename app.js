@@ -83,15 +83,24 @@ function scrollToContent() {
     window.scrollBy(0, yTopContent);
 }
 
+// scroll to portfolio section
+function scrollToPortfolio() {
+    const divPortfolio = document.getElementById('portfolio');
+    const yTopPortfolio = divPortfolio.getBoundingClientRect().top;
+    window.scrollBy(0, yTopPortfolio);
+}
+
 // set scroll on click for arrow
 const clickTarget = document.getElementById('arrow');
 clickTarget.onclick = function() {scrollToContent()};
 
-// animate text on mouse hover
+// handle animation text on mouse hover in content section
 mouseTarget = document.getElementsByClassName("lookAt");
 mouseTarget[0].addEventListener('mouseenter', e => {
     mouseTarget[1].classList.add("animate-slideup");
+    mouseTarget[2].classList.add("animate-slideup");
     mouseTarget[1].classList.remove("hide");
+    mouseTarget[2].classList.remove("hide");
     mouseTarget[0].classList.remove("blink");
   });
 

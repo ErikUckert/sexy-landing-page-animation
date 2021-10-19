@@ -56,7 +56,7 @@ const revealCurtain = (parent) => {
 };
 
 const init = () => {
-    const container = document.getElementById("main");
+    const container = document.getElementById("landing");
     const curtain = revealCurtain(container);
     setTimeout(() => {
         container.removeChild(curtain);
@@ -76,23 +76,36 @@ function OnAnimationEndForArrow() {
 const animatedArrow = document.getElementsByClassName("flex");
 animatedArrow[0].addEventListener("webkitAnimationEnd", OnAnimationEndForArrow);
 
-// scroll to content section
-function scrollToContent() {
-    const divContent = document.getElementById('content');
-    const yTopContent = divContent.getBoundingClientRect().top;
-    window.scrollBy(0, yTopContent);
+// scroll to entry section
+function scrollToEntry() {
+    const divEntry = document.getElementById('entry');
+    const yTopEntry = divEntry.getBoundingClientRect().top;
+    window.scrollBy(0, yTopEntry);
+}
+
+// scroll to portfolio section
+function scrollToPortfolio() {
+    const divPortfolio = document.getElementById('portfolio');
+    const divFooter = document.getElementById("footer");
+    if (divPortfolio.style.display === "none") {
+        divPortfolio.style.display = "block";
+    } else {
+        divPortfolio.style.display = "none";
+    }
+    divFooter.classList.remove("hide")
+    
+    const yTopPortfolio = divPortfolio.getBoundingClientRect().top;
+    window.scrollBy(0, yTopPortfolio);
 }
 
 // set scroll on click for arrow
 const clickTarget = document.getElementById('arrow');
-clickTarget.onclick = function() {scrollToContent()};
+clickTarget.onclick = function() {scrollToEntry()};
 
-// animate text on mouse hover
+// handle animation text on mouse hover in entry section
 mouseTarget = document.getElementsByClassName("lookAt");
 mouseTarget[0].addEventListener('mouseenter', e => {
     mouseTarget[1].classList.add("animate-slideup");
     mouseTarget[1].classList.remove("hide");
     mouseTarget[0].classList.remove("blink");
   });
-
-
